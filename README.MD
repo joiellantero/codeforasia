@@ -10,16 +10,19 @@
 - GO Redeem.
 6. Technology Used :
 - Frontend
-Cinema 4D, Figma, Microsoft Powerpoint.
+a. Cinema 4D
+b. Figma
+c. Microsoft Powerpoint.
 - Backend
-Native Javascript
+a. Native Javascript
+b. WebVR
 - Virtual Reality
-Aframe Js
+a. Aframe Js
 - Database
-Firebase Realtime Database
+a. Firebase Realtime Database
 - Authentication
-Firebase User Authentication
+a. Firebase User Authentication
 - Data Collection
-Google Forms
+a. Google Forms
 7. Contact :
 tiffarainever@gmail.com

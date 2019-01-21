@@ -1,23 +1,25 @@
 ## CODE FOR ASIA COLLABORATIVE REPOSITORY
 
-Product Name : GO-Tour
-URL : https://gotour-541da.firebaseapp.com/
-Motto : Where people collaborate to create a better Tourism Experience
-Creator : Surahutomo Aziz Pradana (PENS) Surabaya, Indonesia
-Main Features :
-GO Places, GO Contribute, GO Redeem.
-Technology Used :
-1. Frontend
+1. Product Name : GO-Tour
+2. URL : https://gotour-541da.firebaseapp.com/
+3. Motto : Where people collaborate to create a better Tourism Experience
+4. Creator : Surahutomo Aziz Pradana (PENS) Surabaya, Indonesia
+5. Main Features :
+- GO Places
+- GO Contribute
+- GO Redeem.
+6. Technology Used :
+- Frontend
 Cinema 4D, Figma, Microsoft Powerpoint.
-2. Backend
+- Backend
 Native Javascript
-3. Virtual Reality
+- Virtual Reality
 Aframe Js
-4. Database
+- Database
 Firebase Realtime Database
-5. Authentication
+- Authentication
 Firebase User Authentication
-6. Data Collection
+- Data Collection
 Google Forms
-Contact :
+7. Contact :
 tiffarainever@gmail.com

@@ -9,7 +9,7 @@
 - GO Contribute
 - GO Redeem.
 6. Technology Used :
-- Frontend :
+- Frontend
 a. Cinema 4D
 b. Figma
 c. Microsoft Powerpoint.

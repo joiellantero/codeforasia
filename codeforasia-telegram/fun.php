@@ -64,7 +64,7 @@ function check_email($email)
 {
     global $con;
     $email_array = array();
-    $username_query = "SELECT `email` FROM `email`";
+    $username_query = "SELECT `email` FROM `users`";
     $username_query_c = mysqli_query($con,$username_query);
     while ($assoc = mysqli_fetch_assoc($username_query_c))
     {

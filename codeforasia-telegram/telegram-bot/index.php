@@ -1,6 +1,6 @@
 <?php
 
-$token = "651223940:AAHOYwwMHs45EoPvGyKOkAdxWc6iAol8pQs";
+$token = "BOT_TOKEN";
 
 $update = json_decode(file_get_contents('php://input') ,true);
 

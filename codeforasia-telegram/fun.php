@@ -1,7 +1,7 @@
 <?php
 function send_message($username,$chatid,$message)
 {
-    $token = "651223940:AAHOYwwMHs45EoPvGyKOkAdxWc6iAol8pQs";
+    $token = "BOT_TOKEN";
     $request_parameters = [
         'chat_id'=>$chatid,
         'text'=>$message
@@ -12,7 +12,7 @@ function send_message($username,$chatid,$message)
 }
 function send_telegram_message($username,$chatid,$message)
 {
-    $token = "651223940:AAHOYwwMHs45EoPvGyKOkAdxWc6iAol8pQs";
+    $token = "BOT_TOKEN";
     $request_parameters = [
         'chat_id'=>$chatid,
         'text'=>$message
@@ -59,5 +59,25 @@ function delete_appointment($user_id)
 
     $reset_user_id = "SET @num := 0;UPDATE `users_appoint` SET `user_id` = @num := (@num+1);ALTER TABLE `users_appoint` AUTO_INCREMENT = 1;";
     $reset_user_id_query = mysqli_multi_query($con,$reset_user_id);
+}
+function check_email($email)
+{
+    global $con;
+    $email_array = array();
+    $username_query = "SELECT `email` FROM `users`";
+    $username_query_c = mysqli_query($con,$username_query);
+    while ($assoc = mysqli_fetch_assoc($username_query_c))
+    {
+        array_push($email_array,$assoc['email']);
+    }
+
+    if(in_array($email,$email_array))
+    {
+        return "found";
+    }
+    else
+    {
+        return "new";
+    }
 }
 ?>

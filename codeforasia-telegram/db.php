@@ -18,6 +18,6 @@ if(defined('database_auth'))
 }
 else
 {
-    die('');
+    die('Cannot read the database file due to security rules');
 }
 ?>

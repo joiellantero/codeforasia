@@ -1,5 +1,5 @@
 # Chan Cheong, brianchan.xd@gmail.com , challenge 2
-Sorry for using flask to do this challenge as in I don't I should use MEAN stack at the very beginning. I can show you a website which I have made previously by using ReactJS, NodeJS and MongoDB if you want to. Free feel to ask me to do so.  
+Sorry for using flask to do this challenge as in I don't I should use MEAN stack at the very beginning. I can show you a website which I have made previously by using ReactJS, NodeJS and MongoDB if you want to. https://github.com/brianbt/Full_Stack_Website  
 
 ## To Run the program  
 For normal python  

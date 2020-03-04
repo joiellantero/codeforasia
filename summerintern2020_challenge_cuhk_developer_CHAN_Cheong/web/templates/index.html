@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="static/stylesheets/flat-ui.css">
+</head>
+<body>
+    <h1 class="text-primary"> Welcome to cert generator </h1>
+    <form action="{{ url_for('get')}}" method="post">
+        <input type='text' name='namelist' class="form-control" placeholder='Please input the Names separate by ",":' size="100">
+        <br />
+        <input type='text' name='emaillist' class="form-control" placeholder='Please input the Emails separate by "," (Order should be corresponding the names):'
+        size = "100">
+        <br />
+        Please Make sure the number of name and number of email are equal
+        <br />
+        <br />
+        Generate Certs
+        <input type="radio" class="icons" name="gen" value="cert" checked><br />
+        Generate Certs and Send emails
+        <input type="radio" class="icons" name="gen" value="certEmail"><br />
+        <br />
+        
+        <button class="btn btn-block btn-lg btn-primary">Submit</button>
+    </form>
+    
+</body>
+</html>

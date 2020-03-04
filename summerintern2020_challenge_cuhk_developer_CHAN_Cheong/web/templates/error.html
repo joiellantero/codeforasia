@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Internal Error</title>
+    <link rel="stylesheet" type="text/css" href="static/stylesheets/flat-ui.css">
+</head>
+
+<body>
+    <h1 style="color: #F1C40F !important;"> Opps, Something went wrong :( </h1>
+    Please check:
+    <br/>
+    If the CertBlank.png in current directory
+    <br/>
+    If the testingFont.ttf in current directory
+    <br/>
+    If the google account infomation correct or not
+    <br />
+    <br />
+    <form action="{{ url_for('index')}}">
+        <button class="btn btn-block btn-lg btn-warning">Back</button>
+    </form>
+</body>
+
+</html>

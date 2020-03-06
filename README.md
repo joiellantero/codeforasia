@@ -1,6 +1,9 @@
 # Wong Man Kit Challenge 1
 I used Django to build this website. I am not sure about if I have to use MongoDB, ExpressJS, ReactJS and NodeJS.
 
+Email: `mkwongjack@gamil.com`
+Mobile: `(+852) 63524420 `
+
 ## How to run the Website
 1. run `python manage.py runserver` on cmd.
 2. go to `http://127.0.0.1:8000/`

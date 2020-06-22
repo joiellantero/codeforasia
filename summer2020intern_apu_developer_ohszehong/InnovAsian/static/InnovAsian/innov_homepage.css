@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-family: Poppins,sans-serif;
+}
+
+a:link{
+  font-family: Poppins,sans-serif;
+}
+
+a {
+  margin:0;
+  padding:0;
+}
+
+.nav-link {
+  color: black;
+  font-weight: 700;
+}
+
+#logo_img {
+  width: 100%;
+  max-width: 260px;
+}
+
+.container-fluid {
+  padding: 0;
+  position: relative;
+}
+
+
+.headline-text {
+  position: absolute;
+  top:35%;
+  left: 50%;
+  color:white;
+  transform: translate(-50%,-50%);
+  font-family: Poppins,sans-serif;
+  font-size: 4vw;
+}
+
+.headline-desc {
+  text-align: center;
+  font-size: 2vw;
+}
+
+.btn {
+  position: absolute;
+  display: block;
+  bottom: 20%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.impact-tracker {
+  padding-top: 120px;
+  width: 100%;
+}
+
+.text-center {
+  padding-bottom: 15px;
+}
+
+.impact-tracker-title {
+  font-family: Poppins,sans-serif;
+  font-weight: bold;
+}
+
+.col {
+  text-align: center;
+}
+
+.d-block {
+  height:550px;
+  object-fit: cover;
+}
+
+.text-center {
+  margin-top: 40px;
+}
+
+.dummy-text {
+  font-family: Roboto,sans-serif;
+  margin-left:15px;
+  margin-right:15px;
+  text-align: justify;
+  margin-bottom:40px;
+}
+
+.card-img-top {
+  height: 30vw;
+  object-fit: cover;
+}
+
+.card {
+  overflow: hidden;
+  text-align: justify;
+}
+
+.card-img-container {
+  position: relative;
+}
+
+.card-img-container .btn {
+  position: absolute;
+  top: 90%;
+  left: 100%;
+  transform: translate(-100%,-90%);
+  height: 50px;
+}
+
+.border {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.card-img-top:hover {
+  cursor:pointer;
+  opacity: 0.8;
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+.card-title {
+  font-family: Poppins,sans-serif;
+  font-weight: bold;
+}
+
+.carousel-control-prev {
+  position: absolute;
+  height: 50px;
+  top:50%;
+  transform: translate(0,-50%);
+}
+
+.carousel-control-prev:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+
+.carousel-control-next {
+  position: absolute;
+  height: 50px;
+  top:50%;
+  transform: translate(0,-50%);
+}
+
+.text-content {
+  padding:2.5%;
+}
+
+.slider-title {
+  font-family: Poppins,sans-serif;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 10%;
+  font-size: 4vw;
+  margin-bottom: 2.5%;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height:5vw;
+  transform: translate(-50%,-50%);
+  font-family: Poppins,sans-serif;
+  font-size: 2vw
+}
+
+.carousel-caption {
+  font-family: Poppins,sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.slider-text {
+  font-family: Roboto,sans-serif;
+  text-align: justify;
+  padding-left: 10%;
+  padding-right:10%;
+  font-size: 1vw;
+}
+
+.video-slider {
+  padding-top: 70px;
+}
+
+.footer {
+  height: 90px;
+  background-color: #444444;
+}
+
+.footer-row {
+  background-color: #444444;
+}
+
+.footer-text {
+  font-family: Poppins,sans-serif;
+  margin-left: 15%;
+  margin-top: 40px;
+  color: white;
+}
+
+.footer-icon {
+  margin-top: 35px;
+  padding-left: 15px;
+}
+
+
+.inner-content {
+  padding:40px;
+}

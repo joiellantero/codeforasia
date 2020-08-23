@@ -4,11 +4,13 @@ Code For Asia Scenario Challenge 5
 ## How to run
 - Install the required dependencies 
 ```
+cd cfa
 cd frontend
 npm install
+cd ..
 cd backend
 npm install
-npm run servers \\ starts both backend and frontend servers
+npm run servers \\ starts both backend and frontend
 ```
 
 - Visit the main webpage at

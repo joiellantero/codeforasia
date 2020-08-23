@@ -14,8 +14,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "servers": "concurrently \"npm run dev\" \"cd ../frontend && npm run start \"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

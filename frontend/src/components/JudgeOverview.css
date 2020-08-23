@@ -1,0 +1,11 @@
+.overviewHeader{
+    padding-top:2rem;
+    display:flex;
+    justify-content:center;
+}
+
+.overviewSubtitle{
+    display:flex;
+    justify-content:center;
+    padding-bottom:2rem;
+}

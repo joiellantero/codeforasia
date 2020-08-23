@@ -107,18 +107,22 @@ class ProjectDetail extends React.Component {
     render() {
         return (
             <Container>
-                <Row className="justify-content-center">
+                <Row
+                    style={{ paddingBottom: "10px" }}
+                    className="justify-content-center"
+                >
                     <Col md={6}>
                         {this.state.isLoggedIn === "true" &&
                             this.state.project && (
                                 <div>
-                                    <p style={{ textAlign: "center" }}>
+                                    <h1 style={{ textAlign: "center" }}>
                                         {this.state.project.name}
-                                    </p>
+                                    </h1>
                                 </div>
                             )}
                     </Col>
                 </Row>
+
                 <Row>
                     <Col lg={8}>
                         <Row>
@@ -135,194 +139,17 @@ class ProjectDetail extends React.Component {
                                 <p>Photo or Video</p>
                             </div>
                         </Row>
-                        <Row className="justify-content-end">
+
+                        <Row
+                            style={{ paddingTop: "5px" }}
+                            className="justify-content-end"
+                        >
                             <Button onClick={this.onScoreButtonClick}>
                                 Score
                             </Button>
-                            <Modal
-                                centered
-                                show={this.state.showModal}
-                                onHide={this.handleModalClose}
-                            >
-                                <Modal.Header closeButton>
-                                    Score this project
-                                </Modal.Header>
-                                <Modal.Body>
-                                    <Form>
-                                        <Form.Group>
-                                            <Form.Row className="justify-content-around">
-                                                <Form.Label
-                                                    column
-                                                    lg={4}
-                                                    className="d-none d-lg-block"
-                                                >
-                                                    Criteria
-                                                </Form.Label>
-                                                <Form.Label
-                                                    column
-                                                    lg={2}
-                                                    className="d-none d-lg-block"
-                                                >
-                                                    Criteria Value
-                                                </Form.Label>
-                                                <Form.Label
-                                                    column
-                                                    lg={3}
-                                                    className="d-none d-lg-block"
-                                                >
-                                                    Score
-                                                </Form.Label>
-                                            </Form.Row>
-                                        </Form.Group>
-                                        <Form.Group>
-                                            <Form.Row className="justify-content-around">
-                                                <Form.Label column lg={4}>
-                                                    Problem Relevance
-                                                </Form.Label>
-                                                <Form.Label
-                                                    column
-                                                    lg={2}
-                                                    className="d-none d-lg-block"
-                                                >
-                                                    30%
-                                                </Form.Label>
-                                                <Col lg={3}>
-                                                    <Form.Control
-                                                        required
-                                                        name="relevance"
-                                                        type="number"
-                                                        placeholder="e.g. 3"
-                                                        min={0}
-                                                        step={0.1}
-                                                        defaultValue={
-                                                            this.state.relevance
-                                                        }
-                                                        onChange={
-                                                            this.handleChange
-                                                        }
-                                                    ></Form.Control>
-                                                </Col>
-                                            </Form.Row>
-                                        </Form.Group>
-                                        <Form.Group>
-                                            <Form.Row className="justify-content-around">
-                                                <Form.Label column lg={4}>
-                                                    Technical Merits
-                                                </Form.Label>
-                                                <Form.Label
-                                                    column
-                                                    lg={2}
-                                                    className="d-none d-lg-block"
-                                                >
-                                                    30%
-                                                </Form.Label>
-                                                <Col lg={3}>
-                                                    <Form.Control
-                                                        required
-                                                        name="merits"
-                                                        type="number"
-                                                        placeholder="e.g. 3"
-                                                        min={0}
-                                                        step={0.1}
-                                                        defaultValue={
-                                                            this.state.merits
-                                                        }
-                                                        onChange={
-                                                            this.handleChange
-                                                        }
-                                                    ></Form.Control>
-                                                </Col>
-                                            </Form.Row>
-                                        </Form.Group>
-                                        <Form.Group>
-                                            <Form.Row className="justify-content-around">
-                                                <Form.Label column lg={4}>
-                                                    Business Potential
-                                                </Form.Label>
-                                                <Form.Label
-                                                    column
-                                                    lg={2}
-                                                    className="d-none d-lg-block"
-                                                >
-                                                    30%
-                                                </Form.Label>
-                                                <Col lg={3}>
-                                                    <Form.Control
-                                                        required
-                                                        name="potential"
-                                                        type="number"
-                                                        placeholder="e.g. 3"
-                                                        min={0}
-                                                        step={0.1}
-                                                        defaultValue={
-                                                            this.state.potential
-                                                        }
-                                                        onChange={
-                                                            this.handleChange
-                                                        }
-                                                    ></Form.Control>
-                                                </Col>
-                                            </Form.Row>
-                                        </Form.Group>
-                                        <Form.Group>
-                                            <Form.Row className="justify-content-around">
-                                                <Form.Label column lg={4}>
-                                                    Originality
-                                                </Form.Label>
-                                                <Form.Label
-                                                    column
-                                                    lg={2}
-                                                    className="d-none d-lg-block"
-                                                >
-                                                    10%
-                                                </Form.Label>
-                                                <Col lg={3}>
-                                                    <Form.Control
-                                                        required
-                                                        name="originality"
-                                                        type="numbers"
-                                                        placeholder="e.g. 3"
-                                                        min={0}
-                                                        step={0.1}
-                                                        defaultValue={
-                                                            this.state
-                                                                .originality
-                                                        }
-                                                        onChange={
-                                                            this.handleChange
-                                                        }
-                                                    ></Form.Control>
-                                                </Col>
-                                            </Form.Row>
-                                        </Form.Group>
-                                    </Form>
-                                </Modal.Body>
-                                <Modal.Footer>
-                                    <Button
-                                        type="submit"
-                                        onClick={this.onSaveButtonClick}
-                                    >
-                                        Save
-                                    </Button>
-                                </Modal.Footer>
-                            </Modal>
-                        </Row>
-                        <Row>
-                            <h2>Description</h2>
-                        </Row>
-                        <Row>
-                            <p>Blah blah</p>
-                        </Row>
-                        <Row>
-                            <h2>Problem</h2>
-                        </Row>
-                        <Row>
-                            <p>Blah blah</p>
-                        </Row>
-                        <Row>
-                            <h2>Innovation</h2>
                         </Row>
                     </Col>
+
                     <Col lg={4}>
                         <div>
                             <p>
@@ -335,6 +162,174 @@ class ProjectDetail extends React.Component {
                         </div>
                     </Col>
                 </Row>
+
+                <Modal
+                    centered
+                    show={this.state.showModal}
+                    onHide={this.handleModalClose}
+                >
+                    <Modal.Header closeButton>Score this project</Modal.Header>
+                    <Modal.Body>
+                        <Form>
+                            <Form.Group>
+                                <Form.Row className="justify-content-around">
+                                    <Form.Label
+                                        column
+                                        lg={4}
+                                        className="d-none d-lg-block"
+                                    >
+                                        Criteria
+                                    </Form.Label>
+                                    <Form.Label
+                                        column
+                                        lg={2}
+                                        className="d-none d-lg-block"
+                                    >
+                                        Criteria Value
+                                    </Form.Label>
+                                    <Form.Label
+                                        column
+                                        lg={3}
+                                        className="d-none d-lg-block"
+                                    >
+                                        Score
+                                    </Form.Label>
+                                </Form.Row>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Row className="justify-content-around">
+                                    <Form.Label column lg={4}>
+                                        Problem Relevance
+                                    </Form.Label>
+                                    <Form.Label
+                                        column
+                                        lg={2}
+                                        className="d-none d-lg-block"
+                                    >
+                                        30%
+                                    </Form.Label>
+                                    <Col lg={3}>
+                                        <Form.Control
+                                            required
+                                            name="relevance"
+                                            type="number"
+                                            placeholder="e.g. 3"
+                                            min={0}
+                                            step={0.1}
+                                            defaultValue={this.state.relevance}
+                                            onChange={this.handleChange}
+                                        ></Form.Control>
+                                    </Col>
+                                </Form.Row>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Row className="justify-content-around">
+                                    <Form.Label column lg={4}>
+                                        Technical Merits
+                                    </Form.Label>
+                                    <Form.Label
+                                        column
+                                        lg={2}
+                                        className="d-none d-lg-block"
+                                    >
+                                        30%
+                                    </Form.Label>
+                                    <Col lg={3}>
+                                        <Form.Control
+                                            required
+                                            name="merits"
+                                            type="number"
+                                            placeholder="e.g. 3"
+                                            min={0}
+                                            step={0.1}
+                                            defaultValue={this.state.merits}
+                                            onChange={this.handleChange}
+                                        ></Form.Control>
+                                    </Col>
+                                </Form.Row>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Row className="justify-content-around">
+                                    <Form.Label column lg={4}>
+                                        Business Potential
+                                    </Form.Label>
+                                    <Form.Label
+                                        column
+                                        lg={2}
+                                        className="d-none d-lg-block"
+                                    >
+                                        30%
+                                    </Form.Label>
+                                    <Col lg={3}>
+                                        <Form.Control
+                                            required
+                                            name="potential"
+                                            type="number"
+                                            placeholder="e.g. 3"
+                                            min={0}
+                                            step={0.1}
+                                            defaultValue={this.state.potential}
+                                            onChange={this.handleChange}
+                                        ></Form.Control>
+                                    </Col>
+                                </Form.Row>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Row className="justify-content-around">
+                                    <Form.Label column lg={4}>
+                                        Originality
+                                    </Form.Label>
+                                    <Form.Label
+                                        column
+                                        lg={2}
+                                        className="d-none d-lg-block"
+                                    >
+                                        10%
+                                    </Form.Label>
+                                    <Col lg={3}>
+                                        <Form.Control
+                                            required
+                                            name="originality"
+                                            type="numbers"
+                                            placeholder="e.g. 3"
+                                            min={0}
+                                            step={0.1}
+                                            defaultValue={
+                                                this.state.originality
+                                            }
+                                            onChange={this.handleChange}
+                                        ></Form.Control>
+                                    </Col>
+                                </Form.Row>
+                            </Form.Group>
+                        </Form>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button type="submit" onClick={this.onSaveButtonClick}>
+                            Save
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
+
+                <Row>
+                    <h2>Description</h2>
+                </Row>
+                <Row>
+                    <p>{this.state.project.description}</p>
+                </Row>
+                <Row>
+                    <h2>Problem</h2>
+                </Row>
+                <Row>
+                    <p>{this.state.project.problem}</p>
+                </Row>
+                <Row>
+                    <h2>Innovation</h2>
+                </Row>
+                <Row>
+                    <p>{this.state.project.innovation}</p>
+                </Row>
+
                 <Row>
                     {this.state.isLoggedIn === "true" &&
                         !this.state.project && (

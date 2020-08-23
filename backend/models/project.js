@@ -18,6 +18,12 @@ const ProjectSchema = mongoose.Schema({
     audiences: String,
     capability: String,
     link: String,
+    members: [
+        {
+            name: String,
+            description: String,
+        },
+    ],
     reviewers: [
         {
             reviewer_id: {

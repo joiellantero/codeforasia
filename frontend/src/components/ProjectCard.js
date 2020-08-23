@@ -1,11 +1,13 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import CardGroup from "react-bootstrap/CardGroup";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/esm/Button";
 import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
 import api from "../api/index";
+import Modal from "react-bootstrap/Modal";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./ProjectCard.css";
 
 class ProjectCard extends React.Component {
     constructor(props) {
@@ -15,6 +17,7 @@ class ProjectCard extends React.Component {
             id: this.props.project._id,
             user_id: sessionStorage.getItem("user_id"),
             score: null,
+            showModal: false,
             merits:
                 this.props.project.score[0] &&
                 this.props.project.score[0].merits
@@ -48,6 +51,7 @@ class ProjectCard extends React.Component {
         this.onDetailsButtonClick = this.onDetailsButtonClick.bind(this);
         this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleOnHide = this.handleOnHide.bind(this);
     }
 
     componentDidMount = () => {
@@ -92,8 +96,17 @@ class ProjectCard extends React.Component {
 
         await api.updateSingleProjectScore(id, payload).then((res) => {
             console.log(res);
-            this.setState({ score: this.calculateScore() });
+            if (res.status == 200) {
+                this.setState({
+                    score: this.calculateScore(),
+                    showModal: true,
+                });
+            }
         });
+    };
+
+    handleOnHide = () => {
+        this.setState({ showModal: false });
     };
 
     render() {
@@ -105,11 +118,17 @@ class ProjectCard extends React.Component {
                     justifyContent: "center",
                 }}
             >
-                <Card style={{ width: "20rem" }}>
-                    <Card.Title>{this.state.name}</Card.Title>
-                    <Button onClick={this.onDetailsButtonClick}>
-                        View Details
-                    </Button>
+                <Card style={{ width: "10rem" }}>
+                    <Card.Title className="projectTitle">
+                        {this.state.name}
+                    </Card.Title>
+                    <Card.Body>
+                        <div>
+                            <Button onClick={this.onDetailsButtonClick}>
+                                View Details
+                            </Button>
+                        </div>
+                    </Card.Body>
                 </Card>
                 <Card style={{ width: "25rem" }}>
                     <Card.Header style={{ backgroundColor: "white" }}>
@@ -121,8 +140,8 @@ class ProjectCard extends React.Component {
                             onSubmit={this.onSaveButtonClick}
                         >
                             <Form.Group>
-                                <Form.Row>
-                                    <Form.Label column lg={5}>
+                                <Form.Row className="justify-content-around">
+                                    <Form.Label column lg={8}>
                                         Problem Relevance
                                     </Form.Label>
                                     <Col lg={3}>
@@ -140,8 +159,8 @@ class ProjectCard extends React.Component {
                                 </Form.Row>
                             </Form.Group>
                             <Form.Group>
-                                <Form.Row>
-                                    <Form.Label column lg={5}>
+                                <Form.Row className="justify-content-around">
+                                    <Form.Label column lg={8}>
                                         Technical Merits
                                     </Form.Label>
                                     <Col lg={3}>
@@ -159,8 +178,8 @@ class ProjectCard extends React.Component {
                                 </Form.Row>
                             </Form.Group>
                             <Form.Group>
-                                <Form.Row>
-                                    <Form.Label column lg={5}>
+                                <Form.Row className="justify-content-around">
+                                    <Form.Label column lg={8}>
                                         Business Potential
                                     </Form.Label>
                                     <Col lg={3}>
@@ -178,8 +197,8 @@ class ProjectCard extends React.Component {
                                 </Form.Row>
                             </Form.Group>
                             <Form.Group>
-                                <Form.Row>
-                                    <Form.Label column lg={5}>
+                                <Form.Row className="justify-content-around">
+                                    <Form.Label column lg={8}>
                                         Originality
                                     </Form.Label>
                                     <Col lg={3}>
@@ -199,15 +218,27 @@ class ProjectCard extends React.Component {
                                 </Form.Row>
                             </Form.Group>
                             <Form.Group>
-                                <Form.Row>
-                                    <Col lg={{ span: 1, offset: 6 }}>
+                                <Form.Row className="justify-content-end">
+                                    <Col lg={3}>
                                         <Button type="submit">Save</Button>
                                     </Col>
                                 </Form.Row>
                             </Form.Group>
                         </Form>
+                        <Row></Row>
                     </Card.Body>
                 </Card>
+                <Modal
+                    size="sm"
+                    show={this.state.showModal}
+                    onHide={this.handleOnHide}
+                >
+                    <Modal.Header closeButton />
+                    <Modal.Body>Successfully updated scores!</Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={this.handleOnHide}>OK</Button>
+                    </Modal.Footer>
+                </Modal>
             </div>
         );
     }

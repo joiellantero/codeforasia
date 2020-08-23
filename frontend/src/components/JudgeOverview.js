@@ -2,6 +2,7 @@ import React from "react";
 import api from "../api/index";
 import { Redirect } from "react-router-dom";
 import { ProjectCard } from "./index";
+import "./JudgeOverview.css";
 
 class JudgeOverview extends React.Component {
     constructor(props) {
@@ -33,14 +34,14 @@ class JudgeOverview extends React.Component {
         return (
             <div>
                 {this.state.isLoggedIn === "true" ? (
-                    <div className="Overview">
+                    <div className="overview">
                         <div>
-                            <header className="Overview-header">
-                                <p>Welcome, {this.state.username} !</p>
+                            <header className="overviewHeader">
+                                <h1>Welcome, {this.state.username} !</h1>
                             </header>
                         </div>
 
-                        <div className="Overview-subtitle">
+                        <div className="overviewSubtitle">
                             <p>Please review these project submissions.</p>
                         </div>
 

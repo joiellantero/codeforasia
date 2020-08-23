@@ -1,6 +1,31 @@
 const Project = require("../models/project");
+const User = require("../models/user");
 const mongoose = require("mongoose");
 const ObjectId = mongoose.Types.ObjectId;
+
+loginUser = async (req, res) => {
+    const { username, password } = req.body;
+
+    // unhased for simplicity sake
+    isUser = await User.findOne(
+        { username: username, password: password },
+        { _id: 1, user_type: 1, username: 1 }
+    );
+
+    // user with username and password exists
+    if (isUser) {
+        res.json({
+            isUser: true,
+            username: isUser.username,
+            id: isUser._id,
+            user_type: isUser.user_type,
+        });
+    } else {
+        res.json({
+            isUser: false,
+        });
+    }
+};
 
 getAllProjectsOverview = async (req, res) => {
     // TODO: replace with with JWT so we can use req.user.id or similar
@@ -80,11 +105,8 @@ updateSingleProjectScore = async (req, res) => {
     const { id } = req.params;
     const { reviewer_id, relevance, merits, potential, originality } = req.body;
     const project = await Project.findById(id);
-
     var newScore = {};
     var exists = 0; // check if reviewer already judged a particular project
-    console.log(relevance);
-    console.log(merits);
 
     for (const oldScore of project.reviewers) {
         if (oldScore.reviewer_id == reviewer_id) {
@@ -101,7 +123,7 @@ updateSingleProjectScore = async (req, res) => {
     }
 
     if (!exists) {
-        // REMIND: validate and sanitize at client side e.g. all 4 criteria must have decimal/int input even if
+        // TODO: validate and sanitize at client side e.g. all 4 criteria must have decimal/int input even if
         // mongoDB already has internal validator using Decimal128
         project.reviewers.push({
             reviewer_id: reviewer_id,
@@ -118,6 +140,7 @@ updateSingleProjectScore = async (req, res) => {
 };
 
 module.exports = {
+    loginUser,
     getAllProjectsOverview,
     getSingleProjectDetail,
     updateSingleProjectScore,

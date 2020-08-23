@@ -93,7 +93,6 @@ class ProjectDetail extends React.Component {
     };
 
     onSaveButtonClick = async (event) => {
-        console.log("ProjectDetail.js");
         event.preventDefault();
         const id = this.props.match.params.id;
         const payload = {
@@ -206,7 +205,7 @@ class ProjectDetail extends React.Component {
                 >
                     <Modal.Header closeButton>Score this project</Modal.Header>
                     <Modal.Body>
-                        <Form>
+                        <Form id="form" onSubmit={this.onSaveButtonClick}>
                             <Form.Group>
                                 <Form.Row className="justify-content-around">
                                     <Form.Label
@@ -341,7 +340,7 @@ class ProjectDetail extends React.Component {
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button type="submit" onClick={this.onSaveButtonClick}>
+                        <Button type="submit" form="form">
                             Save
                         </Button>
                     </Modal.Footer>

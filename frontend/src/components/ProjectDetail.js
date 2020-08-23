@@ -7,7 +7,23 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import Image from "react-bootstrap/Image";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+class Thumbnail extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <Image
+                src="https://place-hold.it/25x25?text=m"
+                roundedCircle
+            ></Image>
+        );
+    }
+}
 
 class ProjectDetail extends React.Component {
     constructor(props) {
@@ -159,6 +175,26 @@ class ProjectDetail extends React.Component {
                         </div>
                         <div>
                             <p>SUBMITTED BY:</p>
+                            <div>
+                                {this.state.project &&
+                                    this.state.project.members &&
+                                    this.state.project.members.map((member) => (
+                                        <Container key={member._id}>
+                                            <Row>
+                                                <Col sm={1}>
+                                                    <Thumbnail />
+                                                </Col>
+                                                <Col sm="auto">
+                                                    {member.name}
+                                                </Col>
+                                            </Row>
+                                            <p style={{ fontStyle: "italic" }}>
+                                                "{member.description}"
+                                            </p>
+                                        </Container>
+                                    ))}
+                            </div>
+                            {}
                         </div>
                     </Col>
                 </Row>
@@ -311,24 +347,38 @@ class ProjectDetail extends React.Component {
                     </Modal.Footer>
                 </Modal>
 
-                <Row>
-                    <h2>Description</h2>
-                </Row>
-                <Row>
-                    <p>{this.state.project.description}</p>
-                </Row>
-                <Row>
-                    <h2>Problem</h2>
-                </Row>
-                <Row>
-                    <p>{this.state.project.problem}</p>
-                </Row>
-                <Row>
-                    <h2>Innovation</h2>
-                </Row>
-                <Row>
-                    <p>{this.state.project.innovation}</p>
-                </Row>
+                {this.state.project && this.state.project.description && (
+                    <div>
+                        <Row>
+                            <h2>Description</h2>
+                        </Row>
+                        <Row>
+                            <p>{this.state.project.description}</p>
+                        </Row>
+                    </div>
+                )}
+
+                {this.state.project && this.state.project.problem && (
+                    <div>
+                        <Row>
+                            <h2>Problem</h2>
+                        </Row>
+                        <Row>
+                            <p>{this.state.project.problem}</p>
+                        </Row>
+                    </div>
+                )}
+
+                {this.state.project && this.state.project.innovation && (
+                    <div>
+                        <Row>
+                            <h2>Innovation</h2>
+                        </Row>
+                        <Row>
+                            <p>{this.state.project.innovation}</p>
+                        </Row>
+                    </div>
+                )}
 
                 <Row>
                     {this.state.isLoggedIn === "true" &&

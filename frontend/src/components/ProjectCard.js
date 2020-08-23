@@ -14,6 +14,7 @@ class ProjectCard extends React.Component {
             name: this.props.project.name,
             id: this.props.project._id,
             user_id: sessionStorage.getItem("user_id"),
+            score: null,
             merits:
                 this.props.project.score[0] &&
                 this.props.project.score[0].merits
@@ -50,7 +51,11 @@ class ProjectCard extends React.Component {
     }
 
     componentDidMount = () => {
-        console.log(this.state.merits);
+        const score = this.calculateScore();
+
+        if (score && score > 0) {
+            this.setState({ score: this.calculateScore() });
+        }
     };
 
     calculateScore = () => {
@@ -87,6 +92,7 @@ class ProjectCard extends React.Component {
 
         await api.updateSingleProjectScore(id, payload).then((res) => {
             console.log(res);
+            this.setState({ score: this.calculateScore() });
         });
     };
 
@@ -107,7 +113,7 @@ class ProjectCard extends React.Component {
                 </Card>
                 <Card style={{ width: "25rem" }}>
                     <Card.Header style={{ backgroundColor: "white" }}>
-                        Your Score:{this.calculateScore()}
+                        Your Score:{this.state.score ? this.state.score : "-"}
                     </Card.Header>
                     <Card.Body>
                         <Form

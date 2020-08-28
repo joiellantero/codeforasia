@@ -1,0 +1,375 @@
+#myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.whiteText {
+    color: #fff;
+}
+
+.blackText {
+    color: #2c3e50;
+}
+
+.blackText:hover {
+    color: #2c3e50;
+}
+
+.divv {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lefti {
+    text-align: left;
+}
+
+.contact1-form-btn {
+    min-width: 193px;
+    height: 50px;
+    border-radius: 25px;
+    background: #fff;
+    font-size: 15px;
+    line-height: 3;
+    color: #2c3e50;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    margin-top: 30px;
+    outline: none;
+}
+
+.justi {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.newspaper1 {
+    columns: 80px 2;
+}
+
+
+/* slider --------start */
+
+.slidercss .btn {
+    display: inline-block;
+    padding: 13px 20px;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    background: transparent;
+    border: 1px solid #e1e1e1;
+    font: 12px/1.2 "Oswald", sans-serif;
+    letter-spacing: 0.4em;
+    text-align: center;
+    text-indent: 2px;
+    text-transform: uppercase;
+    transition: color 0.1s linear 0.05s;
+}
+
+.slidercss .btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #e1e1e1;
+    z-index: 1;
+    opacity: 0;
+    transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0.2s;
+}
+
+.slidercss .btn::after {
+    transition: border 0.1s linear 0.05s;
+}
+
+.slidercss .btn .btn-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.slidercss .btn:hover {
+    color: #373737;
+    transition: color 0.1s linear 0s;
+}
+
+.slidercss .btn:hover::before {
+    top: 0;
+    height: 100%;
+    opacity: 1;
+    transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
+}
+
+.slidercss .btn:hover::after {
+    border-color: #373737;
+    transition: border 0.1s linear 0s;
+}
+
+.slidercss .slideshow {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.slidercss .slideshow .slideshow-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+.slidercss .slideshow .slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slidercss .slideshow .slide {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.slidercss .slideshow .slide.is-active {
+    display: block;
+}
+
+.slidercss .slideshow .slide.is-loaded {
+    opacity: 1;
+}
+
+.slidercss .slideshow .slide .caption {
+    padding: 0 100px;
+}
+
+.slidercss .slideshow .slide .image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    z-index: 1;
+    background-size: cover;
+    image-rendering: optimizeQuality;
+}
+
+.slidercss .slideshow .slide .image-container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.slidercss .slideshow .slide .image {
+    width: 100%;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.slidercss .slideshow .slide-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slidercss .slideshow .slide .title {
+    margin: 0 auto 15px;
+    max-width: 1000px;
+    font: 300 50px/1.2 "Oswald", sans-serif;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+}
+
+.slidercss .slideshow .slide .text {
+    margin: 0 auto;
+    max-width: 1000px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.slidercss .slideshow .slide .btn {
+    margin: 15px 0 0;
+    border-color: #fff;
+}
+
+.slidercss .slideshow .slide .btn::before {
+    background: #fff;
+}
+
+.slidercss .slideshow .pagination {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    cursor: default;
+    z-index: 2;
+    text-align: center;
+}
+
+.slidercss .slideshow .pagination .item {
+    display: inline-block;
+    padding: 15px 5px;
+    position: relative;
+    width: 46px;
+    height: 32px;
+    cursor: pointer;
+    text-indent: -999em;
+    z-index: 1;
+}
+
+.slidercss .slideshow .pagination .item+.page {
+    margin-left: -2px;
+}
+
+.slidercss .slideshow .pagination .item::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 5px;
+    width: 36px;
+    height: 2px;
+    transition: rgba(255, 255, 255, 0.5) 0.2s ease;
+}
+
+.slidercss .slideshow .pagination .item::after {
+    width: 0;
+    background: #fff;
+    z-index: 2;
+    transition: width 0.2s ease;
+}
+
+.slidercss .slideshow .pagination .item:hover::before,
+.slideshow .pagination .item.is-active::before {
+    background-color: #fff;
+}
+
+.slidercss .slideshow .arrows .arrow {
+    margin: -33px 0 0;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.slidercss .slideshow .arrows .prev {
+    left: 30px;
+}
+
+.slidercss .slideshow .arrows .prev:hover .svg {
+    left: -10px;
+}
+
+.slidercss .slideshow .arrows .next {
+    right: 30px;
+}
+
+.slidercss .slideshow .arrows .next:hover .svg {
+    left: 10px;
+}
+
+.slidercss .slideshow .arrows .svg {
+    position: relative;
+    left: 0;
+    width: 14px;
+    height: 26px;
+    fill: #fff;
+    transition: left 0.2s ease;
+}
+
+
+/* slider --------end */
+
+
+/* Zoom In #1 */
+
+.hover01 figure img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+.hover01 figure:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.mt-10 {
+    margin-top: 100px;
+}
+
+.mb-10 {
+    margin-bottom: 100px;
+}
+
+.fulli {
+    width: 100%;
+}
+
+.text-block1 {
+    position: absolute;
+    bottom: 120px;
+    right: 90px;
+    background-color: transparent;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.text-block2 {
+    position: absolute;
+    bottom: 120px;
+    right: 60px;
+    background-color: transparent;
+    color: #2c3e50;
+    padding-left: 20px;
+    padding-right: 20px;
+}

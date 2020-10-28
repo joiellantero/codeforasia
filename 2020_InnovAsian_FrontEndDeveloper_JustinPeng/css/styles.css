@@ -113,7 +113,7 @@ body {
   color: #222
 }
 
-/* SECTION 1 */
+/* Section 1 */
 #about {
   padding: 20px;
   text-align: justify;
@@ -123,7 +123,7 @@ body {
   width: 100%;
 }
 
-/* SECTION 2 */
+/* Section 2 */
 #carousel1 .carousel-item {
   height: 500px;
   width: 100%;
@@ -135,7 +135,7 @@ body {
   height: fit-content;
 }
 
-/* SECTION 3 */
+/* Section 3 */
 #section-3 {
   background-color: #222;
   background-clip: content-box;
@@ -154,9 +154,8 @@ body {
 #section-3 h3 {
   color: #eee;
 }
-/* END SECTION 3 */
 
-/* SECTION 4 */
+/* Section 4 */
 #carousel2 .carousel-inner .carousel-item {
   height: 420px;
   width: 100%;
@@ -176,9 +175,8 @@ body {
 h3 {
   line-height: 150%;
 }
-/* END SECTION 4 */
 
-/* PRE-FOOTER */
+/* Pre-Footer */
 #prefooter {
   padding: 20px;
 }
@@ -199,7 +197,6 @@ h3 {
 .required {
   color:red;
 }
-/* END PRE-FOOTER */
 
 /* FOOTER */
 .panel-footer {
@@ -213,7 +210,6 @@ h3 {
 .panel-footer a {
   color: #eee;
 }
-/* END FOOTER */
 
 /********** Extra small & Small devices **********/
 @media (max-width: 991px) {
@@ -225,7 +221,7 @@ h3 {
   #collapsable-nav a span { /* Collapsed nav menu text */
     font-size: 150%;
   }
-  #collapsable-nav a i { /* Collapsed nav menu glyph */
+  #collapsable-nav a i { /* Collapsed nav menu icon */
     margin-right: 10px;
     font-size: 200%;
   }
@@ -233,8 +229,6 @@ h3 {
   #nav-list a {
     width: 100%;
   }
-  /* End Header */
-
 
   #carousel1 .carousel-inner .carousel-item {
     height: 350px;
@@ -284,10 +278,9 @@ h3 {
   #collapsable-nav a span { /* Collapsed nav menu text */
     font-size: 120%;
   }
-  #collapsable-nav a i { /* Collapsed nav menu glyph */
+  #collapsable-nav a i { /* Collapsed nav menu icon */
     font-size: 150%;
   }
-  /* End Header */
 
   /* Section 2 */
   #carousel1 .carousel-inner .carousel-item {

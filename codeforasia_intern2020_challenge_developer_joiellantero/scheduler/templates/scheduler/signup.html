@@ -1,0 +1,51 @@
+{% extends 'scheduler/base.html' %}
+
+{% block header %}
+    <h1 class="title has-text-centered mt-6">Sign up</h1>
+{% endblock %}
+
+{% block body %}
+    <div class="container signup">
+        <div class="card">
+            <div class="card-body">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="field">
+                        <div class="control">
+                            <label class="mb-0">{{ form.username.label }}</label>
+                            {{ form.username }}
+                            <small id="usernameHelp" class="has-text-danger">{{ form.username.errors }}</small>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <label class="mb-0">{{ form.email.label }}</label>
+                            {{ form.email }}
+                            <small id="emailHelp" class="has-text-danger">{{ form.email.errors }}</small>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <label class="mb-0">{{ form.password1.label }}</label>
+                            {{ form.password1 }}
+                            <small id="emailHelp" class="has-text-danger mb-4"> {{ form.password2.errors }} </small>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <label class="mb-0">{{ form.password2.label }}</label>
+                            {{ form.password2 }}
+                        </div>
+                    </div>
+                    
+                    <div class="my-4">
+                        <input type="checkbox" class="is-checkradio is-info is-small" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
+                    </div>
+                    <button type="submit" class="button is-info is-fullwidth">Signup</button>
+                </form>
+            </div>
+            <p class="has-text-centered is-small mt-4">Already have an account? Login <a href="{% url 'scheduler-login' %}">here.</a></p>
+        </div>
+    </div>
+{% endblock %}

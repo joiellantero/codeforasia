@@ -1,0 +1,28 @@
+{% extends 'scheduler/base.html' %}
+
+{% block header %}
+    <h1 class="title has-text-centered mt-6">Account</h1>
+{% endblock %}
+
+{% block body %}
+    <div class="container account">        
+        {% if messages %}
+            {% for message in messages %}
+                <div class="notification {% if message.tags %} {{ message.tags }} {% endif %}" role="alert">
+                    <button class="delete"></button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="card">
+            <div class="card-body">
+                <form action="" method="post" onsubmit="return checkBeforeSubmit()">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="button is-info mt-4 is-fullwidth">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

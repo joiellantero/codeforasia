@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="Code for Asia | Interview Scheduler" content="Set an appointment for your interview."/>
+
+        <link rel="stylesheet" href="{% static 'scheduler/styles/bulma-checkradio.min.css' %}">
+        <link rel="stylesheet" href="{% static 'scheduler/styles/bulma.css' %}">
+        <link rel="stylesheet" href="{% static 'scheduler/styles/scheduler.css' %}">
+
+        <title>Code for Asia | {% if title %}{{ title }}{% endif %}</title>
+    </head>
+    <body>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="{% url 'scheduler-index' %}">
+                    <p class="has-text-info">Code for Asia</p>
+                </a>
+            
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+          
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="{% url 'scheduler-index' %}">
+                        Home
+                    </a>
+            
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            Help
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href="#">
+                                FAQ
+                            </a>
+                            <a class="navbar-item" href="##">
+                                Contact
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item" href="###">
+                                Report an issue
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="navbar-end">
+                    {% if request.user.is_authenticated %} 
+                        <div class="account navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                                <?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#3198DC"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM15 10C15 11.6569 13.6569 13 12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10ZM5.99927 17C7.36758 15.1783 9.54609 14 11.9998 14C14.4535 14 16.6321 15.1783 18.0004 17C16.6321 18.8217 14.4535 20 11.9998 20C9.54609 20 7.36758 18.8217 5.99927 17Z" fill="#3198DC"></path></svg>
+                            </a>
+                            <div class="navbar-dropdown is-right ">
+                                <a class="navbar-item" href="{% url 'scheduler-account' %}">
+                                    {{ user.username }}
+                                </a>
+                                <a class="navbar-item" href="{% url 'scheduler-logout' %}">
+                                    Logout
+                                </a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a class="button is-info" href="{% url 'scheduler-signup' %}">
+                                    Sign up
+                                </a>
+                                <a class="button is-light" href="{% url 'scheduler-login' %}">
+                                    Log in
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+
+        {% block header %}{% endblock %}
+
+        {% block body %}{% endblock %}
+
+
+        <!-- scripts -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="{% static 'scheduler/scripts/scheduler.js' %}"></script>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>
